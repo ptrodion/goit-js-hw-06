@@ -12,3 +12,32 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector('.gallery');
+
+const cssCode = `
+.gallery {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}`;
+
+galleryEl.insertAdjacentHTML(
+  'beforeend',
+  images
+    .map(
+      ({ url, alt }) =>
+        `<li class="gallery-item"><img src="${url}" alt="${alt}" width=500></li>`
+    )
+    .join('')
+);
+// !!ТАК ЯК У вказано наступне: "не можна змінювати вихідний HTML завдання"
+// !!я вирішив додати інлайново
+
+// galleryEl.style.listStyleType = 'none';
+// galleryEl.style.display = 'flex';
+// galleryEl.style.flexWrap = 'wrap';
+// galleryEl.style.gap = '10px';
+
+galleryEl.insertAdjacentHTML('beforeend', `<style>${cssCode}</style>`);
