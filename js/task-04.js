@@ -1,14 +1,17 @@
-const counterValue = document.querySelector('#value');
-counterValue.textContent = 0;
-const increaseEL = document.querySelector('[data-action="increment"]');
-const decreaseEl = document.querySelector('[data-action="decrement"]');
+let counterValue = 0;
 
-const increaseHandleClick = () => {
-  counterValue.textContent = parseInt(counterValue.textContent) + 1;
-};
-const decreaseHandleClick = () => {
-  counterValue.textContent = parseInt(counterValue.textContent) - 1;
+const refs = {
+  currentCounterValue: document.querySelector('#value'),
+  increaseEL: document.querySelector('[data-action="increment"]'),
+  decreaseEl: document.querySelector('[data-action="decrement"]'),
 };
 
-increaseEL.addEventListener('click', increaseHandleClick);
-decreaseEl.addEventListener('click', decreaseHandleClick);
+const onIncrementClick = () => {
+  refs.currentCounterValue.textContent = counterValue += 1;
+};
+const onDecrementClick = () => {
+  refs.currentCounterValue.textContent = counterValue -= 1;
+};
+
+refs.increaseEL.addEventListener('click', onIncrementClick);
+refs.decreaseEl.addEventListener('click', onDecrementClick);

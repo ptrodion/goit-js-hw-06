@@ -7,6 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 const mainListEl = document.querySelector('#ingredients');
+
 const item = ingredients.map(ingredient => {
   const createLi = document.createElement('li');
   createLi.classList.add('item');
