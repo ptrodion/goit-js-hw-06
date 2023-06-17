@@ -1,13 +1,11 @@
-const refs = {
-  inputEl: document.querySelector('#name-input'),
-  spanEL: document.querySelector('#name-output'),
-  originalTextSpanEL: spanEL.textContent,
-};
+const inputEl = document.querySelector('#name-input');
+const spanEL = document.querySelector('#name-output');
+const originalTextSpanEL = spanEL.textContent;
 
-refs.inputEl.addEventListener('input', onInputEnterName);
+inputEl.addEventListener('input', onInputEnterName);
 
 function onInputEnterName(event) {
   event.currentTarget.value
-    ? (refs.spanEL.textContent = event.currentTarget.value)
-    : (refs.spanEL.textContent = refs.originalTextSpanEL);
+    ? (spanEL.textContent = event.currentTarget.value)
+    : (spanEL.textContent = originalTextSpanEL);
 }
