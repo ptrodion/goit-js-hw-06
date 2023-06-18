@@ -3,7 +3,7 @@ const refs = {
   textSpanEl: document.querySelector('#text'),
 };
 
-refs.fontSizeControlEl.addEventListener('change', onInputChangeValue);
+refs.fontSizeControlEl.addEventListener('input', onInputChangeValue);
 
 function onInputChangeValue(event) {
   let fonSize = refs.fontSizeControlEl.value + 'px';

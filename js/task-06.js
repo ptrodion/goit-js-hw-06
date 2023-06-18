@@ -6,14 +6,20 @@ inputEL.addEventListener('blur', oninputELCheckText);
 function oninputELCheckText(event) {
   if (event.currentTarget.value.length > 0) {
     if (event.currentTarget.value.length === parseInt(expectedLengthEL)) {
-      inputEL.classList.add('valid');
-      inputEL.classList.remove('invalid');
+      addRemoveClasses(inputEL, 'valid', 'invalid');
     } else {
-      inputEL.classList.add('invalid');
-      inputEL.classList.remove('valid');
+      addRemoveClasses(inputEL, 'invalid', 'valid');
     }
   } else {
-    inputEL.classList.remove('invalid');
-    inputEL.classList.remove('valid');
+    removeAllClasses(inputEL, 'valid', 'invalid');
   }
+}
+
+function addRemoveClasses(ell, addClass, removeClass) {
+  ell.classList.add(addClass);
+  ell.classList.remove(removeClass);
+}
+
+function removeAllClasses(ell, ...classes) {
+  classes.forEach(currentClass => ell.classList.remove(currentClass));
 }
