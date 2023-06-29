@@ -16,7 +16,7 @@ const primaryValueSize = 30;
 
 refs.createEl.addEventListener('click', onCreateNewElements);
 
-function onCreateNewElements(event) {
+function onCreateNewElements() {
   createBoxes(refs.inputEl.value);
 }
 
@@ -42,7 +42,6 @@ function createBoxes(amount) {
 }
 
 //  DESTROY
-
 refs.destroyEl.addEventListener('click', onDestroyNewElements);
 
 function onDestroyNewElements() {
@@ -52,3 +51,4 @@ function onDestroyNewElements() {
 function destroyBoxes() {
   refs.boxEl.innerHTML = '';
 }
+
